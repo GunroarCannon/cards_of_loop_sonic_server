@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Connect to Solana devnet
 const connection = new solanaWeb3.Connection(
-  "https://api.devnet.solana.com",
+  "https://api.testnet.sonic.game",
   "confirmed"
 );
 
