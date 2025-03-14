@@ -96,7 +96,8 @@ app.post("/updateScore", async (req, res) => {
     const signature = await solanaWeb3.sendAndConfirmTransaction(
       connection,
       rewardTransaction,
-      [treasurerWallet]
+      [treasurerWallet],
+      {commitment: "confirmed", maxRetries:3}
     );
 
     // Update player's balance
