@@ -1,4 +1,4 @@
-// // Load environment variables from .env file
+// Load environment variables from .env file
 require('dotenv').config();
 
 const express = require('express');
@@ -24,6 +24,11 @@ const treasurerWallet = solanaWeb3.Keypair.fromSecretKey(Uint8Array.from(treasur
 
 // Store player data (in-memory for simplicity; use a database in production)
 const players = {};
+
+// Root route
+app.get('/', (req, res) => {
+  res.send('Cards of Loop Sonic Server is running!');
+});
 
 // Endpoint to connect wallet
 app.post("/connectWallet", async (req, res) => {
